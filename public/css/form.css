@@ -1,0 +1,180 @@
+.alert {
+    display: flex;
+    align-items: center;
+    width: 25em;
+    margin: auto;
+    padding: .5em 1em;
+    overflow: auto;
+    border-radius: 5px;
+}
+
+.alert.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1
+}
+
+.alert.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px black;
+    margin: 1em auto;
+    width: fit-content;
+}
+
+.form h3 {
+    margin: 10px 0;
+}
+
+.form .div-input {
+    margin: 10px 0;
+}
+
+.form .header-input {
+    margin: 10px 0 15px 0;
+}
+
+.form .myLabel {
+    display: block;
+    text-align: left;
+    user-select: none;
+    font-weight: normal;
+}
+
+.form .input:focus {
+    outline: none;
+}
+
+.form .input {
+    border: 0;
+    border-bottom: 1px solid;
+    width: 25em;
+    height: 2em;
+    margin-top: 10px;
+    padding: 5px 0;
+}
+
+.form .input-img {
+    width: 100%;
+    height: 30px;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 5px 0;
+}
+
+.form .input-button {
+    width: 45%;
+    height: 30px;
+    background-color: red;
+    color: white;
+    border: 0;
+    box-shadow: 2px 2px 5px black;
+}
+
+.form .input-button:hover {
+    background-color: rgb(232, 71, 71);
+    cursor: pointer;
+}
+
+.form .error {
+    visibility: hidden;
+    text-align: right;
+    color: red;
+    font-size: 14px;
+    user-select: none;
+}
+
+.form .div-btn {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.radio_button {
+    text-align: left;
+    font-size: 15px;
+    margin: 10px 5px;
+}
+
+.radio_button input {
+    display: inline-block;
+    width: 30px;
+}
+
+.checkbox_button {
+    text-align: left;
+    font-size: 15px;
+    margin: 10px 5px;
+}
+
+.checkbox_button input {
+    display: inline-block;
+    width: 40px;
+}
+
+.form-dang-nhap {
+    background-color: white;
+    margin: 10% 30%;
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px black;
+    width: 28em;
+}
+
+.form-dang-nhap .div-input {
+    margin: 10px 0;
+}
+
+.form-dang-nhap .header-input {
+    margin: 10px 0 15px 0;
+}
+
+.form-dang-nhap .myLabel {
+    user-select: none;
+    display: block;
+    text-align: left;
+    font-weight: normal;
+}
+
+.form-dang-nhap .input:focus {
+    outline: none;
+}
+
+.form-dang-nhap .input {
+    border: 0;
+    border-bottom: 1px solid;
+    width: 100%;
+    height: 2em;
+    margin-top: 10px;
+    padding: 5px 0;
+}
+
+.form-dang-nhap .input-button {
+    width: 100%;
+    height: 2em;
+    background-color: red;
+    color: white;
+    border: 0;
+    box-shadow: 2px 2px 4px black;
+}
+
+.form-dang-nhap .input-button:hover {
+    background-color: rgb(232, 71, 71);
+    cursor: pointer;
+}
+
+.form-dang-nhap .error {
+    visibility: hidden;
+    text-align: right;
+    color: red;
+    font-size: 13px;
+}

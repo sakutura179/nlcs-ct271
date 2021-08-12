@@ -1,0 +1,96 @@
+/* ----- POST-CONTAINER CSS ----- */
+
+.main .post-container {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    min-width: 100%;
+    margin: 2em 0;
+}
+
+
+/* ----- HEADER CSS ----- */
+
+.main .post-container .content-header {
+    min-width: 100%;
+    width: 100%;
+    display: inline-block;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+
+/* ----- POST CSS ----- */
+
+.main .post-container .posts {
+    border-right: 1px solid #101215;
+    min-width: 100%;
+    width: 100%;
+    display: inline-block;
+}
+
+.main .post-container .posts .post {
+    float: left;
+    display: flex;
+    align-items: flex-start;
+    text-align: justify;
+    position: relative;
+    padding-right: .5em;
+    height: 180px;
+    margin-bottom: 3em;
+    min-width: 100%;
+}
+
+.main .post-container .posts .post .news-frame {
+    width: 310px;
+    height: 200px;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    margin: auto;
+    border: 1px solid goldenrod;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.main .post-container .posts .post a {
+    font-size: 24px;
+    display: block;
+}
+
+.main .post-container .posts .post a#category {
+    color: blueviolet;
+    font-size: 18px;
+    /* position: absolute;
+    bottom: 0; */
+}
+
+.main .post-container .posts .post i {
+    font-size: 15px;
+    font-style: normal;
+}
+
+.main .post-container .posts .post img {
+    min-width: 320px;
+    min-height: 180px;
+    width: 320px;
+    height: 180px;
+    margin-right: .5em;
+}
+
+.main .post-container .posts .paginate {
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+}
+
+.main .post-container .posts .none {
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 24px;
+}

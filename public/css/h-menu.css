@@ -1,0 +1,76 @@
+.content-navigation {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50px;
+    background-color: blue;
+    border-radius: 10px;
+}
+
+.content-navigation span {
+    border-radius: 10px;
+    min-width: 200px;
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    padding: 0 5px;
+}
+
+.content-navigation span a {
+    display: block;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.content-navigation span p {
+    display: block;
+    color: whitesmoke;
+}
+
+.content-navigation span.active {
+    background-color: whitesmoke;
+}
+
+.content-navigation span.active a {
+    color: #171717;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1em;
+    transition: left right 0.4s;
+}
+
+table,
+th,
+td {
+    /* margin: auto;
+    border-collapse: collapse;
+    border: 1px solid black; */
+    padding: 5px;
+}
+
+th {
+    text-align: center;
+}
+
+table tbody tr td.icon {
+    text-align: center;
+}
+
+table tbody tr td.icon a {
+    display: block;
+}
+
+table tbody tr td.icon ion-icon {
+    font-size: 1.2em;
+    color: blueviolet;
+}
