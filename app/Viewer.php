@@ -10,7 +10,7 @@ class Viewer extends Authenticatable
     protected $primaryKey = "username";
     
     protected $fillable = [
-        'username', 'password', 'fullname', 'email', 'birth_day', 
+        'username', 'fullname', 'email', 'birth_day', 
     ];
 
     protected $hidden = [

@@ -10,7 +10,7 @@ class Admin extends Authenticatable
     protected $primaryKey = "username";
     
     protected $fillable = [
-        'username', 'password'
+        'username',
     ];
 
     protected $hidden = [

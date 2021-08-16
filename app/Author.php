@@ -10,7 +10,7 @@ class Author extends Authenticatable
     protected $primaryKey = "username";
     
     protected $fillable = [
-        'username', 'password', 'role_id', 'fullname', 'email', 'birth_day', 
+        'username', 'role_id', 'fullname', 'email', 'birth_day', 
         'address', 'phone_no', 'level', 'salary', 'b_account_no'
     ];
 
