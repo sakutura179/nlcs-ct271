@@ -98,6 +98,7 @@
     text-decoration: none;
     color: whitesmoke;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .navigation ul li.active a {
