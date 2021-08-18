@@ -98,7 +98,6 @@
     text-decoration: none;
     color: whitesmoke;
     cursor: pointer;
-    white-space: nowrap;
 }
 
 .navigation ul li.active a {
@@ -125,8 +124,8 @@
     padding-left: 10px;
     height: 60px;
     line-height: 60px;
-    white-space: normal;
     user-select: none;
+    white-space: nowrap;
 }
 
 .toggle {
