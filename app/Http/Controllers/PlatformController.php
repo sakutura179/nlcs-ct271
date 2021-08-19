@@ -48,15 +48,18 @@ class PlatformController extends Controller
 
     public function postEdit(Request $request)
     {
-        $this->validate($request, 
-            [
-                'platform_name' => 'unique:platforms,platform_name',
-            ],
-            [
-                'platform_name.unique' => 'Tên nền tảng đã tồn tại',
-            ]
-        );
         $Platform = Platform::find($request->platform_id);
+        if (strtolower($Platform->platform_name)  != strtolower($request->platform_name)) {
+            $this->validate($request, 
+                [
+                    'platform_name' => 'unique:platforms,platform_name',
+                ],
+                [
+                    'platform_name.unique' => 'Tên nền tảng đã tồn tại',
+                ]
+            );
+        }
+        
         $Platform->platform_name = $request->platform_name;
         $Platform->save();
 
