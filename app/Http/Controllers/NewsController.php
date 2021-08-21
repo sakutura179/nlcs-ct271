@@ -50,7 +50,7 @@ class NewsController extends Controller
         // Luu hinh anh
         $file = $request->file('pic');
         $hinh = str_random(5)."_".$file->getClientOriginalName(); // Dat ten lai cho file hinh
-        while (file_exists("upload/img".$hinh)) {
+        while (file_exists("upload/img/".$hinh)) {
             $hinh = str_random(5)."_".$file->getClientOriginalName(); // Neu trung ten, tiep tuc dat lai
         }
         $file->move("upload/img/", $hinh); // upload file len server
@@ -114,7 +114,7 @@ class NewsController extends Controller
         if ($request->hasFile('pic')) {
             $file = $request->file('pic');
             $hinh = str_random(5)."-".$file->getClientOriginalName(); // Dat ten lai cho file hinh moi
-            while (file_exists("upload/img".$hinh)) {
+            while (file_exists("upload/img/".$hinh)) {
                 $hinh = str_random(5)."-".$file->getClientOriginalName(); // Neu trung ten, tiep tuc dat lai
             }
             $file->move("upload/img/", $hinh); // upload hinh moi len server
