@@ -34,7 +34,7 @@
                 {{ csrf_field() }}
                 <div class="div-input">
                     <label for="platform_name" class="myLabel">Tên nền tảng</label>
-                    <input type="text" name="platform_name" id="platform_name" value="{{ $data->platform_name }}" class="input">
+                    <input type="text" name="platform_name" id="platform_name" value="{{ $data->platform_name }}" class="input" maxlength="40">
                     <p id="invalid-name" class="error">ok</p>
                 </div>
                 <input type="hidden" name="platform_id" value="{{ $data->platform_id }}">

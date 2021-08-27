@@ -36,12 +36,12 @@
                 <div class="div-input">
                     <label for="category_name" class="myLabel">Tên thể loại</label>
                     <input type="text" name="category_name" id="category_name" 
-                            value="{{ $data->category_name }}" class="input">
+                            value="{{ $data->category_name }}" class="input" maxlength="50">
                 </div>
                 <div class="div-input">
                     <label for="category_fullname" class="myLabel">Tên đầy đủ của thể loại</label>
                     <input type="text" name="category_fullname" id="category_fullname" 
-                            value="{{ $data->category_fullname }}" class="input">
+                            value="{{ $data->category_fullname }}" class="input" maxlength="100">
                 </div>
                 <div class="div-input">
                     <label for="category_platform" class="myLabel">Nền tảng</label>

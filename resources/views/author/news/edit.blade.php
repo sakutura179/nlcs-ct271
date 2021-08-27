@@ -56,7 +56,7 @@
                 </div>
                 <div class="div-input">
                     <label for="header" class="myLabel">Tiêu đề</label>
-                    <input type="text" name="header" id="header" class="input" 
+                    <input type="text" name="header" id="header" class="input" maxlength="128"
                             style="width: 100%" value="{{ $data->header }}">
                     <p id="invalid-header" class="error">ok</p>
                 </div>

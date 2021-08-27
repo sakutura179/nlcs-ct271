@@ -35,27 +35,27 @@
             {{ csrf_field() }}
             <div class="div-input">
                 <label for="username" class="myLabel">Tên tài khoản</label>
-                <input type="text" name="username" id="username" class="input">
+                <input type="text" name="username" id="username" class="input" maxlength="50">
                 <p id="invalid-username" class="error">ok</p>
             </div>
             <div class="div-input">
                 <label for="password" class="myLabel">Mật khẩu</label>
-                <input type="password" name="password" id="password" class="input">
+                <input type="password" name="password" id="password" class="input" maxlength="32">
                 <p id="invalid-pass" class="error">ok</p>
             </div>
             <div class="div-input">
                 <label for="re-password" class="myLabel">Nhập lại mật khẩu</label>
-                <input type="password" name="re-password" id="re-password" class="input">
+                <input type="password" name="re-password" id="re-password" class="input" maxlength="32">
                 <p id="invalid-re-pass" class="error">ok</p>
             </div>
             <div class="div-input">
                 <label for="fullname" class="myLabel">Họ tên</label>
-                <input type="text" name="fullname" id="fullname" class="input">
+                <input type="text" name="fullname" id="fullname" class="input" maxlength="50">
                 <p id="invalid-fullname" class="error">ok</p>
             </div>
             <div class="div-input">
                 <label for="email" class="myLabel">Email</label>
-                <input type="email" name="email" id="email" class="input">
+                <input type="email" name="email" id="email" class="input" maxlength="100">
                 <p id="invalid-email" class="error">ok</p>
             </div>
             <div class="div-input">

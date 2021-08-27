@@ -51,12 +51,12 @@
             {{ csrf_field() }}
             <div class="div-input">
                 <label for="username" class="myLabel">Tên đăng nhập</label>
-                <input type="text" name="username" id="username" class="input">
+                <input type="text" name="username" id="username" class="input" maxlength="50">
                 <p id="invalid-name" class="error">ok</p>
             </div>
             <div class="div-input">
                 <label for="pass" class="myLabel">Mật khẩu</label>
-                <input type="password" name="pass" id="pass" class="input">
+                <input type="password" name="pass" id="pass" class="input" maxlength="32">
                 <p id="invalid-pass" class="error">ok</p>
             </div>
             <p>Chưa có tài khoản? <a href="{{ route('signin') }}">Đăng ký</a></p>
