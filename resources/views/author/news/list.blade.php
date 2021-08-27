@@ -35,6 +35,7 @@
                     <th>Tựa Đề</th>
                     <th>Nổi Bật</th>
                     <th>Lượt Xem</th>
+                    <th>Xem Chi Tiết</th>
                     <th>Quản Lý Comment</th>
                     <th>Sửa</th>
                 </tr>
@@ -56,6 +57,9 @@
                             @endif
                         </td>
                         <td>{{ $item->view }}</td>
+                        <td style="text-align: center;">
+                            <a target="_blank" href="{{ route('post', ['id'=>$item->news_id]) }}">Xem</a>
+                        </td>
                         <td class="icon"><a href="{{ route('author-list-comment', ['id' => $item->news_id]) }}">
                             <ion-icon name="clipboard-outline"></ion-icon></a></td>
                         <td class="icon"><a href="{{ route('author-edit-news', ['id' => $item->news_id]) }}">
