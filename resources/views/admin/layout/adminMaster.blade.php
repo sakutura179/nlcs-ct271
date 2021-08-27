@@ -6,8 +6,8 @@
 <html lang="en">
 <head>
     @include('admin.layout.meta')
-    @include('admin.layout.adminCss')
     @include('css')
+    @include('admin.layout.adminCss')
     @yield('css')
     @yield('upperScript')
     @yield('title')
