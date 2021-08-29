@@ -89,7 +89,7 @@ class PageController extends Controller
             return view('pages.categoryPage', ['news' => $news]);
         } else {
             $category = Category::find($id); // lay ra the loai
-            if (count($category) == 0) {
+            if ($category == null) {
                 return redirect('/');
             }
             
@@ -111,7 +111,7 @@ class PageController extends Controller
         |    Do trong bảng news không có id platform, nên phải cần làm như thể này để có thể phân trang được
         */
         $platform = Platform::find($id); // lay ra nen tang
-        if (count($platform) == 0) {
+        if ($platform == null) {
             return redirect('/');
         }
 
