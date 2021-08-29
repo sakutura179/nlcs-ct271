@@ -20,7 +20,7 @@
     display: inline-block;
     font-size: 32px;
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 }
 
 
@@ -39,9 +39,9 @@
     align-items: flex-start;
     text-align: justify;
     position: relative;
-    padding-right: .5em;
+    padding-right: .5rem;
     height: 180px;
-    margin-bottom: 3em;
+    margin-bottom: 3rem;
     min-width: 100%;
 }
 
@@ -79,7 +79,7 @@
     min-height: 180px;
     width: 320px;
     height: 180px;
-    margin-right: .5em;
+    margin-right: .5rem;
 }
 
 .main .post-container .posts .paginate {

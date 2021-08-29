@@ -7,7 +7,7 @@
         }
 
         .content {
-            padding: .5em 2em;
+            padding: .5rem 2rem;
         }
 
         a {
