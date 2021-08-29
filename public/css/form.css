@@ -11,13 +11,15 @@
 .alert.alert-danger {
     color: #a94442;
     background-color: #f2dede;
-    border-color: #ebccd1
+    border-color: #ebccd1;
+    margin-bottom: 1em;
 }
 
 .alert.alert-success {
     color: #3c763d;
     background-color: #dff0d8;
-    border-color: #d6e9c6
+    border-color: #d6e9c6;
+    margin-bottom: 1em;
 }
 
 .form {
