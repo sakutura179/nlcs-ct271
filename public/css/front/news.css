@@ -1,6 +1,6 @@
 .content {
     text-align: justify;
-    padding: 1.5rem 8rem;
+    padding: 1.5em 8em;
 }
 
 
@@ -43,7 +43,7 @@
     height: 100px;
     text-align: justify;
     position: relative;
-    padding-right: .5rem;
+    padding-right: .5em;
     color: #101215;
 }
 
@@ -61,7 +61,7 @@
     min-height: 100px;
     width: 160px;
     height: 100px;
-    margin-right: .5rem;
+    margin-right: .5em;
 }
 
 .content .related-news-container .related-news .news-frame {
@@ -84,19 +84,19 @@
 
 .content .comments .write-comment-container {
     background-color: lightgray;
-    padding: 1.5rem 1rem;
+    padding: 1.5em 1em;
     border-radius: 10px;
 }
 
 textarea {
     width: 100%;
-    height: 5rem;
+    height: 5em;
     min-width: 100%;
     max-width: 100%;
 }
 
 .content .comments .comment {
-    padding: .5rem;
+    padding: .5em;
 }
 
 .content .comments .comment .comment-header {

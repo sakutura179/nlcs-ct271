@@ -12,7 +12,7 @@
         .login-box,
         .box {
             position: relative;
-            top: 7.5rem;
+            top: 7.5em;
         }
 
         .login-box {
