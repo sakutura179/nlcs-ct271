@@ -972,3 +972,68 @@ function editViewer() {
 
     return check;
 }
+
+function resetPass() {
+    var check = true;
+    //pass
+    var x = document.querySelector('#password').value;
+    var BTCQPASS = /^(?=.*\d)(?=.*[a-zA-Z])[A-Za-z0-9!@#\$%\^\&*\)\(]{6,32}$/;
+
+    if (x === null || x === '') {
+        document.querySelector('#invalid-pass').innerHTML = 'Vui lòng nhập mật khẩu mới'
+        document.querySelector('#invalid-pass').style.visibility = 'visible';
+        document.querySelector('#password').style.border = '2px solid red';
+        document.querySelector('#password').style.borderRadius = '4%';
+        check = false;
+    } else {
+        if (BTCQPASS.test(x) === false) {
+            document.querySelector('#invalid-pass').innerHTML = 'Có cả chữ và số, có thể có ký tự đặc biệt, từ 6 - 32 ký tự';
+            document.querySelector('#invalid-pass').style.visibility = 'visible';
+            document.querySelector('#password').style.border = '2px solid red';
+            document.querySelector('#password').style.borderRadius = '4%';
+            check = false;
+        } else {
+            document.querySelector('#invalid-pass').innerHTML = 'ok';
+            document.querySelector('#invalid-pass').style.visibility = 'hidden';
+            document.querySelector('#password').style.border = '0';
+            document.querySelector('#password').style.borderBottom = '1px solid';
+        }
+    }
+
+
+    //repass
+    var x = document.querySelector('#re-password').value;
+    var BTCQREPASS = /^(?=.*\d)(?=.*[a-zA-Z])[A-Za-z0-9!@#\$%\^\&*\)\(]{6,32}$/;
+
+    if (x === null || x === '') {
+        document.querySelector('#invalid-re-pass').innerHTML = 'Vui lòng nhập lại mật khẩu mới'
+        document.querySelector('#invalid-re-pass').style.visibility = 'visible';
+        document.querySelector('#re-password').style.border = '2px solid red';
+        document.querySelector('#re-password').style.borderRadius = '4%';
+        check = false;
+    } else {
+        if (BTCQREPASS.test(x) === false) {
+            document.querySelector('#invalid-re-pass').innerHTML = 'Có cả chữ và số, có thể có ký tự đặc biệt, từ 6 - 32 ký tự';
+            document.querySelector('#invalid-re-pass').style.visibility = 'visible';
+            document.querySelector('#re-password').style.border = '2px solid red';
+            document.querySelector('#re-password').style.borderRadius = '4%';
+            check = false;
+        } else {
+            document.querySelector('#invalid-re-pass').innerHTML = 'ok';
+            document.querySelector('#invalid-re-pass').style.visibility = 'hidden';
+            document.querySelector('#re-password').style.border = '0';
+            document.querySelector('#re-password').style.borderBottom = '1px solid';
+        }
+    }
+
+    //pass - repass
+    if (document.querySelector('#password').value != document.querySelector('#re-password').value) {
+        document.querySelector('#invalid-re-pass').innerHTML = 'Mật khẩu đã nhập không khớp! Hãy thử lại';
+        document.querySelector('#invalid-re-pass').style.visibility = 'visible';
+        document.querySelector('#re-password').style.border = '2px solid red';
+        document.querySelector('#re-password').style.borderRadius = '4%';
+        check = false;
+    }
+
+    return check;
+}

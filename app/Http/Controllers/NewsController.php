@@ -7,6 +7,7 @@ use App\Category;
 use App\Comment;
 use App\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class NewsController extends Controller
 {
@@ -49,9 +50,9 @@ class NewsController extends Controller
         $News->content = $request->content;
         // Luu hinh anh
         $file = $request->file('pic');
-        $hinh = str_random(5)."_".$file->getClientOriginalName(); // Dat ten lai cho file hinh
+        $hinh = Str::random(5)."_".$file->getClientOriginalName(); // Dat ten lai cho file hinh
         while (file_exists("upload/img/".$hinh)) {
-            $hinh = str_random(5)."_".$file->getClientOriginalName(); // Neu trung ten, tiep tuc dat lai
+            $hinh = Str::random(5)."_".$file->getClientOriginalName(); // Neu trung ten, tiep tuc dat lai
         }
         $file->move("upload/img/", $hinh); // upload file len server
         $News->pic = "upload/img/".$hinh; // luu duong dan vao csdl
@@ -113,9 +114,9 @@ class NewsController extends Controller
         // upload lai hinh neu author co tai hinh moi len
         if ($request->hasFile('pic')) {
             $file = $request->file('pic');
-            $hinh = str_random(5)."-".$file->getClientOriginalName(); // Dat ten lai cho file hinh moi
+            $hinh = Str::random(5)."-".$file->getClientOriginalName(); // Dat ten lai cho file hinh moi
             while (file_exists("upload/img/".$hinh)) {
-                $hinh = str_random(5)."-".$file->getClientOriginalName(); // Neu trung ten, tiep tuc dat lai
+                $hinh = Str::random(5)."-".$file->getClientOriginalName(); // Neu trung ten, tiep tuc dat lai
             }
             $file->move("upload/img/", $hinh); // upload hinh moi len server
             unlink($News->pic); // Xoa hinh cu tren server

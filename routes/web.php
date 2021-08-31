@@ -37,13 +37,20 @@ Route::get('login', function () {
     return view('login');
 })->name('login');
 
-Route::post('login', 'AuthController@login');
+Route::post('login', 'AuthController@login')->name('postLogin');
 
 Route::get('logout', 'AuthController@logout')->name('logout');
 
 Route::get('signin', 'ViewerController@create')->name('signin');
 Route::post('signin', 'ViewerController@add')->name('postSignin');
 
+// Lay lai mat khau
+Route::get('recovery-password', 'EmailController@getRecovery')->name('recovery');
+Route::post('recovery-password', 'EmailController@RecoveryPassword')->name('postRecovery');
+// Xac nhan ma
+Route::post('recovery', 'EmailController@postCode')->name('postCode');
+// Reset password
+Route::post('reset', 'EmailController@postReset')->name('postReset');
 /*
 |
 | Session Route

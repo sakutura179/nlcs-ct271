@@ -47,7 +47,7 @@
         </script>
     @endif
     <div class="form-dang-nhap">
-        <form action="{{ url('login') }}" method="POST" onsubmit="return login()">
+        <form action="{{ route('postLogin') }}" method="POST" onsubmit="return login()">
             {{ csrf_field() }}
             <div class="div-input">
                 <label for="username" class="myLabel">Tên đăng nhập</label>
@@ -60,6 +60,7 @@
                 <p id="invalid-pass" class="error">ok</p>
             </div>
             <p>Chưa có tài khoản? <a href="{{ route('signin') }}">Đăng ký</a></p>
+            <p><a href="{{ route('recovery') }}">Quên mật khẩu?</a></p>
             <div class="div-btn">
                 <input type="submit" value="Đăng nhập" class="input-button">
             </div>
