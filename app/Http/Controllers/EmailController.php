@@ -21,10 +21,6 @@ class EmailController extends Controller
 
     public function RecoveryPassword(Request $request)
     {
-        $this->validate($request, 
-            [
-                'email' => 'required',
-            ]);
         $recoveryCode = Str::random(5);
         Mail::to($request['email'])->send(new RecoveryPassword($recoveryCode));
 

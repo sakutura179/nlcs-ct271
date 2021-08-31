@@ -27,7 +27,7 @@
             {{ csrf_field() }}
             <div class="div-input">
                 <label for="code" class="myLabel">Mã xác nhận</label>
-                <input type="text" name="code" id="code" class="input" maxlength="5">
+                <input type="text" name="code" id="code" class="input" maxlength="5" required>
                 <p id="invalid-name" class="error">ok</p>
                 <input type="hidden" name="recovery" value="{{ $recoveryCode }}">
                 <input type="hidden" name="email" value="{{ $email }}">
