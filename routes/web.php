@@ -44,7 +44,11 @@ Route::get('logout', 'AuthController@logout')->name('logout');
 Route::get('signin', 'ViewerController@create')->name('signin');
 Route::post('signin', 'ViewerController@add')->name('postSignin');
 
-// Lay lai mat khau
+/* 
+|
+| Lay lai mat khau
+|
+*/
 Route::get('recovery-password', 'EmailController@getRecovery')->name('recovery');
 Route::post('recovery-password', 'EmailController@RecoveryPassword')->name('postRecovery');
 // Xac nhan ma
