@@ -7,6 +7,26 @@
     font-size: 16px;
 }
 
+
+/* Scrollbar */
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #38ada9 #3d3d3d;
+}
+
+*::-webkit-scrollbar {
+    width: 0.75vw;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #38ada9;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: #3d3d3d;
+}
+
 body {
     min-height: 100vh;
     background-color: whitesmoke!important;
