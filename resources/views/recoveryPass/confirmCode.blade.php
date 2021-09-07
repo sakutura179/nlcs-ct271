@@ -1,7 +1,8 @@
 @extends('master')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/form.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/dark-form.css') }}">
     <style>
         .content {
             display: flex;
@@ -22,7 +23,7 @@
 
 @section('content')
     
-    <div class="form-dang-nhap">
+    {{-- <div class="form-dang-nhap">
         <form action="{{ route('postCode') }}" method="POST">
             {{ csrf_field() }}
             <div class="div-input">
@@ -35,6 +36,17 @@
             <div class="div-btn">
                 <input type="submit" value="Xác nhận" class="input-button">
             </div>
+        </form>
+    </div> --}}
+    <div class="dark-form">
+        <form action="{{ route('postCode') }}" method="POST">
+            {{ csrf_field() }}
+            <input type="text" name="code" id="code" class="input" 
+                   placeholder="Mã xác nhận" maxlength="5" required>
+            <p id="invalid-name" class="error">ok</p>
+            <input type="hidden" name="recovery" value="{{ $recoveryCode }}">
+            <input type="hidden" name="email" value="{{ $email }}">
+            <input type="submit" value="Xác nhận" class="input-button">
         </form>
     </div>
 @endsection

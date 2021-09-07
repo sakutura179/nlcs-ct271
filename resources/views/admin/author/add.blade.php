@@ -35,7 +35,7 @@
                 {{ csrf_field() }}
                 <div class="div-input">
                     <label for="username" class="myLabel">Tên tài khoản</label>
-                    <input type="text" name="username" id="username" class="input" maxlength="50">
+                    <input type="text" name="username" id="username" class="input" maxlength="20">
                     <p id="invalid-username" class="error">ok</p>
                 </div>
                 <div class="div-input">

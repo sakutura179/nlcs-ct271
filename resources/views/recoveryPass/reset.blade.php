@@ -1,7 +1,8 @@
 @extends('master')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/form.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/dark-form.css') }}">
     <style>
         .content {
             display: flex;
@@ -21,8 +22,7 @@
 @endsection
 
 @section('content')
-    
-    <div class="form-dang-nhap">
+    {{-- <div class="form-dang-nhap">
         <form action="{{ route('postReset') }}" method="POST" onsubmit="return resetPass()">
             {{ csrf_field() }}
             <div class="div-input">
@@ -39,6 +39,22 @@
             <div class="div-btn">
                 <input type="submit" value="Đổi mật khẩu" class="input-button">
             </div>
+        </form>
+    </div> --}}
+    <div class="dark-form">
+        <form action="{{ route('postReset') }}" method="POST" onsubmit="return resetPass()">
+            {{ csrf_field() }}
+            <input type="password" name="password" id="password" 
+                   placeholder="Nhập mật khẩu mới" class="input pass">
+            <p id="invalid-pass" class="error">ok</p>
+
+            <input type="password" name="re-password" id="re-password" 
+                   placeholder="Nhập lại mật khẩu mới" class="input pass">
+            <p id="invalid-re-pass" class="error">ok</p>
+
+            <input type="hidden" name="email" value="{{ $email }}">
+
+            <input type="submit" value="Đổi mật khẩu" class="input-button">
         </form>
     </div>
 @endsection

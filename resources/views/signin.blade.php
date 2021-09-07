@@ -2,14 +2,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/form.css') }}">
-    <style>
-        .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/signin-form.css') }}">
 @endsection
 
 @section('upperScript')
@@ -30,12 +23,12 @@
     @endif
 
     <div class="form">
-        <h3>Đăng Ký Tài Khoản</h3>
+        <h1>Đăng Ký Tài Khoản</h1>
         <form action="{{ route('postSignin') }}" method="POST" onsubmit="return viewer()">
             {{ csrf_field() }}
             <div class="div-input">
                 <label for="username" class="myLabel">Tên tài khoản</label>
-                <input type="text" name="username" id="username" class="input" maxlength="50">
+                <input type="text" name="username" id="username" class="input" maxlength="20">
                 <p id="invalid-username" class="error">ok</p>
             </div>
             <div class="div-input">
@@ -65,7 +58,7 @@
             </div>
             <div class="div-btn">
                 <input type="reset" value="Nhập lại" class="input-button">
-                <input type="submit" value="Thêm" class="input-button">
+                <input type="submit" value="Đăng ký" class="input-button">
             </div>
         </form>
     </div>
