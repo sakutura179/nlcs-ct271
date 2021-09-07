@@ -14,7 +14,7 @@ class CreateAdminsTable extends Migration
     public function up()
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->string('username', 50);
+            $table->string('username', 20);
             $table->string('password', 100);
             $table->unsignedInteger('role_id');
             $table->rememberToken();

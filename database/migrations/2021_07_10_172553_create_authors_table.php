@@ -14,7 +14,7 @@ class CreateAuthorsTable extends Migration
     public function up()
     {
         Schema::create('authors', function (Blueprint $table) {
-            $table->string('username', 50);
+            $table->string('username', 20);
             $table->string('password', 100);
             $table->unsignedInteger('role_id');
             $table->string('fullname', 50);
