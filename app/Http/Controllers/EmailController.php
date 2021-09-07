@@ -21,6 +21,11 @@ class EmailController extends Controller
 
     public function RecoveryPassword(Request $request)
     {
+        $dataV = Viewer::where(['email' => $request->email])->first();
+        $dataA = Author::where(['email' => $request->email])->first();
+        if ($dataV == null && $dataA == null) {
+            return redirect()->route('recovery')->with('error', 'Email không tồn tại');
+        }
         $recoveryCode = Str::random(5);
         Mail::to($request['email'])->send(new RecoveryPassword($recoveryCode));
 
