@@ -33,16 +33,18 @@ Route::prefix('/')->middleware('PageAuth')->group(function () {
 });
 
 
-Route::get('login', function () {
-    return view('login');
-})->name('login');
-
-Route::post('login', 'AuthController@login')->name('postLogin');
-
+/* 
+|
+| Login, Logout, Signin
+|
+*/
+Route::get('login', 'AuthController@getLogin')->name('login');
+Route::post('login', 'AuthController@postLogin')->name('postLogin');
 Route::get('logout', 'AuthController@logout')->name('logout');
 
 Route::get('signin', 'ViewerController@create')->name('signin');
 Route::post('signin', 'ViewerController@add')->name('postSignin');
+
 
 /* 
 |
@@ -55,24 +57,6 @@ Route::post('recovery-password', 'EmailController@RecoveryPassword')->name('post
 Route::post('recovery', 'EmailController@postCode')->name('postCode');
 // Reset password
 Route::post('reset', 'EmailController@postReset')->name('postReset');
-/*
-|
-| Session Route
-|
-*/
-
-Route::middleware(['web'])->group(function () {
-    Route::get('session', function () {
-
-    });
-});
-
-/*
-|
-| Middleware Route
-|
-*/
-
 
 
 /*
@@ -138,6 +122,7 @@ Route::prefix('admin')->middleware('AdminAuth')->group(function () {
     });
     
 });
+
 
 /*
 |
