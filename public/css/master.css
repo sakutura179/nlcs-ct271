@@ -10,7 +10,7 @@
 
 /* Scrollbar */
 
-html {
+* {
     scrollbar-width: thin;
     scrollbar-color: #38ada9 #3d3d3d;
 }
