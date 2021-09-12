@@ -1,6 +1,6 @@
 <div class="menu">
     <div class="logo">
-        <a href="{{ route('mainPage') }}"><img src="{{ asset('img/vn.jpg') }}" alt=""></a>
+        <a href="{{ route('mainPage') }}"><img src="{{ asset('img/GE-logo.png') }}" alt=""></a>
     </div>
     <div class="list" id="lol">
         <a href="{{ route('category', ['id' => 1]) }}">LMHT</a>
