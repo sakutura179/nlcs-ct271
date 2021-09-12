@@ -3,12 +3,15 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/h-menu.css') }}">
     <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+    {{-- summernote --}}
+    <link href="{{ asset('summernote/summernote.min.css') }}" rel="stylesheet">  
 @endsection
 
 @section('upperScript')
     <script src="{{ asset('js/admin/regEx.js') }}"></script>
-    {{-- ckeditor --}}
-    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    {{-- summernote --}}
+    <script src="{{ asset('summernote/summernote.min.js') }}"></script>
+    <script src="{{ asset('summernote/lang/summernote-vi-VN.js') }}"></script>
 @endsection
 
 @section('title')
@@ -83,6 +86,21 @@
         let xMenu = document.getElementById('add');
         xMenu.className = 'content-list active'; 
 
-        CKEDITOR.replace( 'content' );
+        $(document).ready(function() {
+            $('#content').summernote({
+                height: 1000,
+                lang: "vi-VN",
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough', 'superscript', 'subscript']],
+                    ['fontname', ['fontname']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['insert', ['link', 'picture', 'video', 'table', 'hr']],
+                    ['view', ['fullscreen', 'codeview', 'undo', 'redo', 'help']],
+                ],
+            });
+        });
     </script>
 @endsection
