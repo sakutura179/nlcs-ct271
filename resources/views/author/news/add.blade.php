@@ -3,15 +3,12 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/h-menu.css') }}">
     <link rel="stylesheet" href="{{ asset('css/form.css') }}">
-    {{-- summernote --}}
-    <link href="{{ asset('summernote/summernote.min.css') }}" rel="stylesheet">   
 @endsection
 
 @section('upperScript')
     <script src="{{ asset('js/admin/regEx.js') }}"></script>
-    {{-- summernote --}}
-    <script src="{{ asset('summernote/summernote.min.js') }}"></script>
-    <script src="{{ asset('summernote/lang/summernote-vi-VN.js') }}"></script>
+    {{-- ckeditor --}}
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 @endsection
 
 @section('title')
@@ -86,11 +83,6 @@
         let xMenu = document.getElementById('add');
         xMenu.className = 'content-list active'; 
 
-        $(document).ready(function() {
-            $('#content').summernote({
-                height: 600,
-                lang: "vi-VN",
-            });
-        });
+        CKEDITOR.replace( 'content' );
     </script>
 @endsection

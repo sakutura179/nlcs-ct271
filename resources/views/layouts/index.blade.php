@@ -1,7 +1,7 @@
 <!-- 
     Su dung:
         DataTable cua jQuery
-        summernote - trinh soan thao Rich Text
+        ckeditor - trinh soan thao Rich Text
         bootstrap-select - select option menu
         bootstrap 3.4.1
         jQuery
