@@ -44,7 +44,6 @@
             <input type="text" name="code" id="code" class="input" 
                    placeholder="Mã xác nhận" maxlength="5" required>
             <p id="invalid-name" class="error">ok</p>
-            <input type="hidden" name="recovery" value="{{ $recoveryCode }}">
             <input type="hidden" name="email" value="{{ $email }}">
             <input type="submit" value="Xác nhận" class="input-button">
         </form>
