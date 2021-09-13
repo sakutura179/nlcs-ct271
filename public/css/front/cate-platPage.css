@@ -62,13 +62,6 @@
     display: block;
 }
 
-.main .post-container .posts .post a#category {
-    color: blueviolet;
-    font-size: 18px;
-    /* position: absolute;
-    bottom: 0; */
-}
-
 .main .post-container .posts .post i {
     font-size: 15px;
     font-style: normal;

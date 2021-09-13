@@ -1,3 +1,108 @@
+/* CHUYEN DOI DARK MODE VA LIGHT MODE */
+
+:root {
+    --bgc: whitesmoke;
+    --cate: blueviolet;
+    --a: inherit;
+    --hover: #121212;
+}
+
+[data-theme="dark"] {
+    --bgc: #1F1B24;
+    --cate: greenyellow;
+    --a: white;
+    --hover: #d2b48c;
+}
+
+body {
+    background-color: var(--bgc)!important;
+    /* danh dau */
+}
+
+a {
+    color: var(--a);
+    /* danh dau */
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--hover);
+    /* danh dau */
+}
+
+.content .header,
+.content p,
+.content .news-content,
+.content h2,
+.content .main .content-header {
+    color: var(--a);
+}
+
+.content .comments p {
+    color: black;
+}
+
+
+/* DARK MODE SWITCH */
+
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1000;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 30px;
+    position: relative;
+    width: 60px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #d2b48c;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    background-color: white;
+    content: '';
+    height: 22px;
+    width: 22px;
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #999;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
 /* ----- SLIDE CSS ----- */
 
 .slide-frame {
@@ -211,8 +316,10 @@
     display: block;
 }
 
-.main .post-platform .posts .post a#category {
-    color: blueviolet;
+.main .post-platform .posts .post a#category,
+.main .post-container .posts .post a#category {
+    color: var(--cate);
+    /* danh dau */
     font-size: 18px;
     /* position: absolute;
     bottom: 0; */

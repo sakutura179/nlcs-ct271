@@ -95,8 +95,15 @@ textarea {
     max-width: 100%;
 }
 
+.content .comments #comments-container {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin-top: 1em;
+}
+
 .content .comments .comment {
     padding: .5em;
+    border-bottom: 1px solid #101215;
 }
 
 .content .comments .comment .comment-header {

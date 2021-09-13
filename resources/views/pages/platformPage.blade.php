@@ -2,6 +2,8 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/front/cate-platPage.css') }}">
+    {{-- dark mode --}}
+    <link rel="stylesheet" href="{{ asset('css/front/mainPage.css') }}">
 @endsection
 
 @section('title')
