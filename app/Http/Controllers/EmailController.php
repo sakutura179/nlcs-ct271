@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use App\Mail\RecoveryPassword;
 use App\Viewer;
+use Illuminate\Support\Facades\Session;
 
 class EmailController extends Controller
 {
@@ -27,16 +28,17 @@ class EmailController extends Controller
             return redirect()->route('recovery')->with('error', 'Email không tồn tại');
         }
         $recoveryCode = Str::random(5);
+        $request->session()->put('code', $recoveryCode);
         Mail::to($request['email'])->send(new RecoveryPassword($recoveryCode));
 
-        return view('recoveryPass.confirmCode', 
-                    ['recoveryCode' => $recoveryCode, 'email' => $request['email']]);
+        return view('recoveryPass.confirmCode', ['email' => $request['email']]);
     }
 
     // xac nhan ma xac nhan
     public function postCode(Request $request)
     {
-        if ($request['code'] == $request['recovery']) {
+        $code = $request->session()->pull('code');
+        if ($request['code'] == $code) {
             return view('recoveryPass.reset', ['email' => $request['email']]);
         } else {
             return redirect()->route('login')->with('alert', 'Đã nhập sai mã xác nhận');

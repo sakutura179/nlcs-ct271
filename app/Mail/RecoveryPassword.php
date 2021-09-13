@@ -30,7 +30,7 @@ class RecoveryPassword extends Mailable
      */
     public function build()
     {
-        return $this->from('khanhnguyen3916@gmail.com', 'GG Esports')
+        return $this->from('khanhb1809357@gmail.com', 'GG Esports')
                     ->subject('Password Recovery')
                     ->view('mail.recoveryCode', ['recoveryCode' => $this->recoveryCode]);
     }
