@@ -34,7 +34,8 @@ a:hover {
 .content p,
 .content .news-content,
 .content h2,
-.content .main .content-header {
+.content .main .content-header,
+.none {
     color: var(--a);
 }
 
