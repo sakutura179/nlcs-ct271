@@ -30,12 +30,12 @@
                     @if (count($news) > 0)
                         @foreach ($news as $item)
                             <div class="post">
-                                <a href="{{ route('post', ['id' => $item->news_id]) }}" target="_blank">
+                                <a href="{{ route('post', ['slug' => $item->slug]) }}" target="_blank">
                                     <img src="{{ asset($item->pic) }}" alt="$item->header"></a>
                                 <div class="news-frame"></div>
                                 <p><a href="{{ route('category', ['id' => $item->category_id]) }}" id="category">
                                     {{ $item->newsBelongsToCategory->category_name }}</a>
-                                <a href="{{ route('post', ['id' => $item->news_id]) }}" target="_blank">{{ $item->header }}
+                                <a href="{{ route('post', ['slug' => $item->slug]) }}" target="_blank">{{ $item->header }}
                                 <br><i>Lượt xem: {{ $item->view }}<br>{{ $item->created_at }}</i></a>
                                 </p>
                             </div>

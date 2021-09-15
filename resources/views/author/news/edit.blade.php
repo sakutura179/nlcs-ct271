@@ -56,7 +56,7 @@
                 </div>
                 <div class="div-input">
                     <label for="header" class="myLabel">Tiêu đề</label>
-                    <input type="text" name="header" id="header" class="input" maxlength="128"
+                    <input type="text" name="header" id="header" class="input" maxlength="100"
                             style="width: 100%" value="{{ $data->header }}">
                     <p id="invalid-header" class="error">ok</p>
                 </div>
@@ -105,6 +105,7 @@
                     ['insert', ['link', 'picture', 'video', 'table', 'hr']],
                     ['view', ['fullscreen', 'codeview', 'undo', 'redo', 'help']],
                 ],
+                fontSizes: ['12', '14', '16', '18', '24', '36', '48' , '64', '82'],
             });
         });
     </script>

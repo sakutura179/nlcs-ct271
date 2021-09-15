@@ -10,7 +10,7 @@ class News extends Model
     protected $primaryKey = "news_id";
 
     protected $fillable = [
-        'category_id', 'username', 'header', 'content', 'pic', 'trending', 'view'
+        'category_id', 'username', 'header', 'content', 'pic', 'trending', 'view', 'slug',
     ];
 
     public $timestamps = true;

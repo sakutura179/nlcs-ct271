@@ -58,7 +58,7 @@
                         </td>
                         <td>{{ $item->view }}</td>
                         <td style="text-align: center;">
-                            <a target="_blank" href="{{ route('post', ['id'=>$item->news_id]) }}">Xem</a>
+                            <a target="_blank" href="{{ route('post', ['slug' => $item->slug]) }}">Xem</a>
                         </td>
                         <td class="icon"><a href="{{ route('author-list-comment', ['id' => $item->news_id]) }}">
                             <ion-icon name="clipboard-outline"></ion-icon></a></td>

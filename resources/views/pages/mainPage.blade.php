@@ -21,7 +21,7 @@
             <div class="slidesContainer">
                 @foreach ($trending as $item)
                     <div class="slides faded">
-                        <a href="{{ route('post', ['id' => $item->news_id]) }}"  
+                        <a href="{{ route('post', ['slug' => $item->slug]) }}"  
                          onmouseover='pauseTimer()' onmouseout='activeTimer()' target="_blank">
                             <img src="{{ asset($item->pic) }}" class="imgInSlides">
                         </a>
@@ -45,9 +45,9 @@
         <div class="newest-container" style="background: url({{ asset('img/bg02.jpg') }});">
             @foreach ($newest as $item)
                 <div class="newest">
-                    <a href="{{ route('post', ['id' => $item->news_id]) }}" target="_blank">
+                    <a href="{{ route('post', ['slug' => $item->slug]) }}" target="_blank">
                         <img src="{{ asset($item->pic) }}" alt="$item->header"></a>
-                    <p><a href="{{ route('post', ['id' => $item->news_id]) }}" target="_blank">
+                    <p><a href="{{ route('post', ['slug' => $item->slug]) }}" target="_blank">
                         {{ $item->header }}</a>
                     <br><a href="{{ route('category', ['id' => $item->category_id]) }}" id="category">
                         {{ $item->newsBelongsToCategory->category_name }}</a></p>
@@ -66,12 +66,12 @@
                 <div class="posts">
                     @foreach ($news as $item)
                         <div class="post">
-                            <a href="{{ route('post', ['id' => $item->news_id]) }}" target="_blank">
+                            <a href="{{ route('post', ['slug' => $item->slug]) }}" target="_blank">
                                 <img src="{{ asset($item->pic) }}" alt="$item->header"></a>
                             <div class="news-frame"></div>
                             <p><a href="{{ route('category', ['id' => $item->category_id]) }}" id="category">
                                 {{ $item->newsBelongsToCategory->category_name }}</a>
-                            <a href="{{ route('post', ['id' => $item->news_id]) }}" target="_blank">{{ $item->header }}
+                            <a href="{{ route('post', ['slug' => $item->slug]) }}" target="_blank">{{ $item->header }}
                             <br><i>Lượt xem: {{ $item->view }}<br>{{ $item->created_at }}</i></a>
                             </p>
                         </div>

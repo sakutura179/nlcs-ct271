@@ -27,12 +27,12 @@ class PageController extends Controller
             foreach ($news as $item) {
                 echo "
                 <div class='post'>
-                    <a href='".$link."post/".$item->news_id."' target='_blank'>
+                    <a href='".$link."post/".$item->slug."' target='_blank'>
                         <img src='".$link.$item->pic."' alt='$item->header'></a>
                     <div class='news-frame'></div>
                     <p><a href='".$link."category/".$item->category_id."' id='category'>".$item->newsBelongsToCategory->category_name."</a>
-                    <a href='".$link."post/".$item->news_id."' target='_blank'>".$item->header."
-                    <br><i>".$item->created_at."</i></a>
+                    <a href='".$link."post/".$item->slug."' target='_blank'>".$item->header."
+                    <br><i>Lượt xem: ". $item->view ."<br>".$item->created_at."</i></a>
                     </p>
                 </div>";
                 
@@ -45,12 +45,12 @@ class PageController extends Controller
                 foreach ($posts as $item) {
                     echo "
                     <div class='post'>
-                        <a href='".$link."post/".$item->news_id."' target='_blank'>
+                        <a href='".$link."post/".$item->slug."' target='_blank'>
                             <img src='".$link.$item->pic."' alt='$item->header'></a>
                         <div class='news-frame'></div>
                         <p><a href='".$link."category/".$item->category_id."' id='category'>".$item->newsBelongsToCategory->category_name."</a>
-                        <a href='".$link."post/".$item->news_id."' target='_blank'>".$item->header."
-                        <br><i>".$item->created_at."</i></a>
+                        <a href='".$link."post/".$item->slug."' target='_blank'>".$item->header."
+                        <br><i>Lượt xem: ". $item->view ."<br>".$item->created_at."</i></a>
                         </p>
                     </div>";
                 }
@@ -68,12 +68,12 @@ class PageController extends Controller
         foreach ($news as $item) {
             echo "
             <div class='post'>
-                <a href='".$link."post/".$item->news_id."' target='_blank'>
+                <a href='".$link."post/".$item->slug."' target='_blank'>
                     <img src='".$link.$item->pic."' alt='$item->header'></a>
                 <div class='news-frame'></div>
                 <p><a href='".$link."category/".$item->category_id."' id='category'>".$item->newsBelongsToCategory->category_name."</a>
-                <a href='".$link."post/".$item->news_id."' target='_blank'>".$item->header."
-                <br><i>".$item->created_at."</i></a>
+                <a href='".$link."post/".$item->slug."' target='_blank'>".$item->header."
+                <br><i>Lượt xem: ". $item->view ."<br>".$item->created_at."</i></a>
                 </p>
             </div>";
         }

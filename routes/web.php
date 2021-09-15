@@ -29,7 +29,7 @@ Route::prefix('/')->middleware('PageAuth')->group(function () {
     
     Route::get('platform/{id}', 'PageController@platform')->name('platform');  
     
-    Route::get('post/{id}', 'NewsController@post')->name('post');
+    Route::get('post/{slug}', 'NewsController@post')->name('post');
 });
 
 

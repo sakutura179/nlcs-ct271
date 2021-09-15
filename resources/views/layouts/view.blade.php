@@ -28,9 +28,9 @@
                     @if ($i == 4) @break @endif <!-- Neu da in ra 4 bai thi dung -->
                     @if ($item->news_id == $data->news_id) @continue @endif <!-- Neu bai dang duyet trung voi bai hien tai thi bo qua -->
                     <div class="related-news">
-                        <a href="{{ route('post', ['id' => $item->news_id]) }}" target="_blank">
+                        <a href="{{ route('post', ['slug' => $item->slug]) }}" target="_blank">
                             <img src="{{ asset($item->pic) }}" alt="$item->header"></a>
-                        <p><a href="{{ route('post', ['id' => $item->news_id]) }}" target="_blank">
+                        <p><a href="{{ route('post', ['slug' => $item->slug]) }}" target="_blank">
                             {{ $item->header }}</a></p>
                         <div class="news-frame"></div>
                     </div>

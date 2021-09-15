@@ -17,11 +17,12 @@ class CreateNewsTable extends Migration
             $table->increments('news_id');
             $table->unsignedInteger('category_id');
             $table->string('username', 50);
-            $table->string('header', 128);
+            $table->string('header', 100)->unique();
             $table->longText('content');
             $table->string('pic', 128);
             $table->boolean('trending');
             $table->unsignedInteger('view');
+            $table->string('slug', 200);
 
             $table->foreign('category_id', 'fk_category_news')
                   ->references('category_id')->on('categories')

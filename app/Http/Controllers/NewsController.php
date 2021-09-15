@@ -59,6 +59,7 @@ class NewsController extends Controller
 
         $News->trending = 0;
         $News->view = 0;
+        $News->slug = Str::slug($request->header, '-');
         $News->save();
 
         // Tang bai viet cua author len 1
@@ -122,7 +123,7 @@ class NewsController extends Controller
             unlink($News->pic); // Xoa hinh cu tren server
             $News->pic = "upload/img/".$hinh; // luu duong dan moi vao csdl            
         }
-
+        $News->slug = Str::slug($request->header, '-');
         $News->save();
 
         return redirect()->route('author-edit-news', ['id' => $request->news_id])
@@ -143,9 +144,9 @@ class NewsController extends Controller
         return redirect()->route('news-list')->with('noti', 'Đã xóa thành công bài viết');
     }
 
-    public function post($id)
+    public function post($slug)
     {
-        $data = News::find($id);
+        $data = News::where(['slug' => $slug])->first();
         $data->view += 1;
         $data->save();
 
