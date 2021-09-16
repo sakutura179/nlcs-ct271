@@ -44,6 +44,7 @@ class CategoryController extends Controller
         $Category = new Category();
         $Category->category_name = $request->category_name;
         $Category->category_fullname = $request->category_fullname;
+        $Category->slug = Str::slug($request->category_name);
         $Category->save();
 
         //Them vao bang cate_plat
@@ -89,7 +90,7 @@ class CategoryController extends Controller
         
         $Category->category_name = $request->category_name;
         $Category->category_fullname = $request->category_fullname;
-
+        $Category->slug = Str::slug($request->category_name);
         $Category->save();
         if (isset($request->category_platform)) {
             foreach ($request->category_platform as $value) {

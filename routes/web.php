@@ -25,7 +25,7 @@ Route::prefix('/')->middleware('PageAuth')->group(function () {
     
     Route::get('more/{val}', 'PageController@more');
     
-    Route::get('category/{id}', 'PageController@category')->name('category');
+    Route::get('category/{slug}', 'PageController@category')->name('category');
     
     Route::get('platform/{id}', 'PageController@platform')->name('platform');  
     

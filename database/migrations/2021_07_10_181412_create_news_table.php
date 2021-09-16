@@ -22,7 +22,7 @@ class CreateNewsTable extends Migration
             $table->string('pic', 128);
             $table->boolean('trending');
             $table->unsignedInteger('view');
-            $table->string('slug', 200);
+            $table->string('slug', 200)->unique();
 
             $table->foreign('category_id', 'fk_category_news')
                   ->references('category_id')->on('categories')

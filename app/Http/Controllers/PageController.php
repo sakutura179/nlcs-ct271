@@ -30,7 +30,7 @@ class PageController extends Controller
                     <a href='".$link."post/".$item->slug."' target='_blank'>
                         <img src='".$link.$item->pic."' alt='$item->header'></a>
                     <div class='news-frame'></div>
-                    <p><a href='".$link."category/".$item->category_id."' id='category'>".$item->newsBelongsToCategory->category_name."</a>
+                    <p><a href='".$link."category/".$item->newsBelongsToCategory->slug."' id='category'>".$item->newsBelongsToCategory->category_name."</a>
                     <a href='".$link."post/".$item->slug."' target='_blank'>".$item->header."
                     <br><i>Lượt xem: ". $item->view ."<br>".$item->created_at."</i></a>
                     </p>
@@ -48,7 +48,7 @@ class PageController extends Controller
                         <a href='".$link."post/".$item->slug."' target='_blank'>
                             <img src='".$link.$item->pic."' alt='$item->header'></a>
                         <div class='news-frame'></div>
-                        <p><a href='".$link."category/".$item->category_id."' id='category'>".$item->newsBelongsToCategory->category_name."</a>
+                        <p><a href='".$link."category/".$item->newsBelongsToCategory->slug."' id='category'>".$item->newsBelongsToCategory->category_name."</a>
                         <a href='".$link."post/".$item->slug."' target='_blank'>".$item->header."
                         <br><i>Lượt xem: ". $item->view ."<br>".$item->created_at."</i></a>
                         </p>
@@ -71,7 +71,7 @@ class PageController extends Controller
                 <a href='".$link."post/".$item->slug."' target='_blank'>
                     <img src='".$link.$item->pic."' alt='$item->header'></a>
                 <div class='news-frame'></div>
-                <p><a href='".$link."category/".$item->category_id."' id='category'>".$item->newsBelongsToCategory->category_name."</a>
+                <p><a href='".$link."category/".$item->newsBelongsToCategory->slug."' id='category'>".$item->newsBelongsToCategory->category_name."</a>
                 <a href='".$link."post/".$item->slug."' target='_blank'>".$item->header."
                 <br><i>Lượt xem: ". $item->view ."<br>".$item->created_at."</i></a>
                 </p>
@@ -81,20 +81,20 @@ class PageController extends Controller
             <div class='btn-frame'></div></div>";
     }
 
-    public function category($id)
+    public function category($slug)
     {
-        if ($id == 0) {
-            $header = array(1, 2, 3, 4, 5, 6, 12, 13);
+        if ($slug == 'khac') {
+            $header = array(1, 2, 3, 4, 5, 6, 7, 8);
             $news = News::whereNotIn('category_id', $header)->orderBy('news_id', 'desc')->paginate(10);
             return view('pages.categoryPage', ['news' => $news]);
         } else {
-            $category = Category::find($id); // lay ra the loai
-            if ($category == null) {
+            $cate = Category::where(['slug' => $slug])->first(); // lay ra the loai
+            if ($cate == null) {
                 return redirect('/');
+            } else {
+                $news = News::where('category_id', $cate->category_id)->orderBy('news_id', 'desc')->paginate(10);
+                return view('pages.categoryPage', ['news' => $news, 'category' => $cate]);                 
             }
-            
-            $news = News::where('category_id', $id)->orderBy('news_id', 'desc')->paginate(10);
-            return view('pages.categoryPage', ['news' => $news, 'category' => $category]);                 
         }
     }
 
@@ -117,7 +117,7 @@ class PageController extends Controller
 
         $categories = $platform->platformBelongsToCategory; // Lay ra nhung the loai thuoc nen tang $id
 
-        if (count($categories) == 0) { // Neu nen tang chua thuoc the loai nao het
+        if (count($categories) == 0) { // Neu nen tang chua co the loai nao het
             return view('pages.platformPage', ['news' => $categories, 'platform' => $platform]);
         } else {
             $i = 0; // Bien dem cua mang chua du lieu

@@ -11,9 +11,11 @@
         if (isset($category)) {
             $category_fullname = $category->category_fullname;
             $category_id = $category->category_id;
+            $category_slug = $category->category_slug;
         } else {
             $category_fullname = 'Khác';
             $category_id = '0';
+            $category_slug = 'khac';
         }
     ?>
     <title>Thể Loại: {{ $category_fullname }}</title>
@@ -33,7 +35,7 @@
                                 <a href="{{ route('post', ['slug' => $item->slug]) }}" target="_blank">
                                     <img src="{{ asset($item->pic) }}" alt="$item->header"></a>
                                 <div class="news-frame"></div>
-                                <p><a href="{{ route('category', ['id' => $item->category_id]) }}" id="category">
+                                <p><a href="{{ route('category', ['slug' => $item->newsBelongsToCategory->slug]) }}" id="category">
                                     {{ $item->newsBelongsToCategory->category_name }}</a>
                                 <a href="{{ route('post', ['slug' => $item->slug]) }}" target="_blank">{{ $item->header }}
                                 <br><i>Lượt xem: {{ $item->view }}<br>{{ $item->created_at }}</i></a>

@@ -24,7 +24,7 @@
                                 <a href="{{ route('post', ['slug' => $item->slug]) }}" target="_blank">
                                     <img src="{{ asset($item->pic) }}" alt="$item->header"></a>
                                 <div class="news-frame"></div>
-                                <p><a href="{{ route('category', ['id' => $item->category_id]) }}" id="category">
+                                <p><a href="{{ route('category', ['slug' => $item->newsBelongsToCategory->slug]) }}" id="category">
                                     {{ $item->newsBelongsToCategory->category_name }}</a>
                                 <a href="{{ route('post', ['slug' => $item->slug]) }}" target="_blank">{{ $item->header }}
                                 <br><i>Lượt xem: {{ $item->view }}<br>{{ $item->created_at }}</i></a>
