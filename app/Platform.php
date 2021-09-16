@@ -10,7 +10,7 @@ class Platform extends Model
     protected $primaryKey = "platform_id";
 
     protected $fillable = [
-        'platform_name',
+        'platform_name', 'slug',
     ];
 
     public $timestamps = true;

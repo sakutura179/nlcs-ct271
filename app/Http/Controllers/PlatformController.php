@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Platform;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PlatformController extends Controller
 {
@@ -35,6 +36,7 @@ class PlatformController extends Controller
         );
         $Platform = new Platform();
         $Platform->platform_name = $request->platform_name;
+        $Platform->slug = Str::slug($request->platform_name);
         $Platform->save();
 
         return redirect()->route('add-platform')->with('noti', 'Đã thêm thành công nền tảng mới');
@@ -61,6 +63,7 @@ class PlatformController extends Controller
         }
         
         $Platform->platform_name = $request->platform_name;
+        $Platform->slug = Str::slug($request->platform_name);
         $Platform->save();
 
         return redirect()->route('edit-platform', ['id' => $request->platform_id])

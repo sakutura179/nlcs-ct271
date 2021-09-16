@@ -6,6 +6,7 @@ use App\Cate_plat;
 use App\Category;
 use App\Platform;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {

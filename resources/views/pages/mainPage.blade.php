@@ -78,6 +78,7 @@
                     @endforeach
                     <div class="more"><button id="more" onclick="more()">Xem Thêm</button><div class="btn-frame"></div></div>
                 </div>
+                <!-- Platform -->
                 <div class="platforms">
                     @foreach ($platform as $item)
                         @php
@@ -85,7 +86,7 @@
                             $selectedBg = "img/".$bg[$i];
                         @endphp
                         <div class="platform" style="background: url({{ asset($selectedBg) }});">
-                            <a href="{{ route('platform', ['id' => $item->platform_id]) }}">{{ $item->platform_name }}</a>
+                            <a href="{{ route('platform', ['slug' => $item->slug]) }}">{{ $item->platform_name }}</a>
                         </div>
                     @endforeach
                 </div>

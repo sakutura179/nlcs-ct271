@@ -98,7 +98,7 @@ class PageController extends Controller
         }
     }
 
-    public function platform($id)
+    public function platform($slug)
     {
         /* 
         |    Ý tưởng: 
@@ -110,7 +110,7 @@ class PageController extends Controller
         |
         |    Do trong bảng news không có id platform, nên phải cần làm như thể này để có thể phân trang được
         */
-        $platform = Platform::find($id); // lay ra nen tang
+        $platform = Platform::where(['slug' => $slug])->first(); // lay ra nen tang
         if ($platform == null) {
             return redirect('/');
         }
