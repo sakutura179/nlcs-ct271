@@ -53,12 +53,13 @@
                 </div>
                 <div class="div-input">
                     <label for="header" class="myLabel">Tiêu đề</label>
-                    <input type="text" name="header" id="header" class="input" maxlength="100" style="width: 100%">
+                    <input type="text" name="header" id="header" class="input" 
+                           value="{{ old('header') }}" maxlength="100" style="width: 100%">
                     <p id="invalid-header" class="error">ok</p>
                 </div>
                 <div class="div-input">
                     <label for="content" class="myLabel">Nội dung</label>
-                    <textarea name="content" id="content"></textarea>
+                    <textarea name="content" id="content">{{ old('content') }}</textarea>
                     <p id="invalid-content" class="error">ok</p>
                 </div>
                 <div class="div-input">

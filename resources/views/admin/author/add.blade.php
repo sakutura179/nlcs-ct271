@@ -35,7 +35,8 @@
                 {{ csrf_field() }}
                 <div class="div-input">
                     <label for="username" class="myLabel">Tên tài khoản</label>
-                    <input type="text" name="username" id="username" class="input" maxlength="20">
+                    <input type="text" name="username" id="username" class="input"
+                           value="{{ old('username') }}" maxlength="20">
                     <p id="invalid-username" class="error">ok</p>
                 </div>
                 <div class="div-input">
@@ -50,43 +51,46 @@
                 </div>
                 <div class="div-input">
                     <label for="fullname" class="myLabel">Họ tên</label>
-                    <input type="text" name="fullname" id="fullname" class="input" maxlength="50">
+                    <input type="text" name="fullname" id="fullname" class="input"
+                           value="{{ old('fullname') }}" maxlength="50">
                     <p id="invalid-fullname" class="error">ok</p>
                 </div>
                 <div class="div-input">
                     <label for="email" class="myLabel">Email</label>
-                    <input type="email" name="email" id="email" class="input" maxlength="100">
+                    <input type="email" name="email" id="email" class="input"
+                           value="{{ old('email') }}"maxlength="100">
                     <p id="invalid-email" class="error">ok</p>
                 </div>
                 <div class="div-input">
                     <label for="birth_day" class="myLabel">Ngày sinh</label>
-                    <input type="date" name="birth_day" id="birth_day" class="input">
+                    <input type="date" name="birth_day" id="birth_day" class="input" value="{{ old('birth_day') }}">
                     <p id="invalid-bday" class="error">ok</p>
                 </div>
                 <div class="div-input">
                     <label for="address" class="myLabel">Địa chỉ</label>
-                    <input type="text" name="address" id="address" class="input" maxlength="100">
+                    <input type="text" name="address" id="address" class="input"
+                           value="{{ old('address') }}" maxlength="100">
                     <p id="invalid-address" class="error">ok</p>
                 </div>
                 <div class="div-input">
                     <label for="phone_no" class="myLabel">Số điện thoại</label>
                     <input type="tel" placeholder="012-345-6789" pattern="[0]{1}[0-9]{9}" 
-                     name="phone_no" id="phone_no" class="input" maxlength="10">
+                     name="phone_no" id="phone_no" class="input" maxlength="10" value="{{ old('phone_no') }}">
                     <p id="invalid-phone" class="error">ok</p>
                 </div>
                 <div class="div-input">
                     <label for="posts" class="myLabel">Số bài viết đã đăng</label>
-                    <input type="number" name="posts" id="posts" class="input">
+                    <input type="number" name="posts" id="posts" class="input" value="{{ old('posts') }}">
                     <p id="invalid-posts" class="error">ok</p>
                 </div>
                 <div class="div-input">
                     <label for="level" class="myLabel">Cấp độ tài khoản</label>
-                    <input type="number" name="level" id="level" class="input">
+                    <input type="number" name="level" id="level" class="input" value="{{ old('level') }}">
                     <p id="invalid-level" class="error">ok</p>
                 </div>
                 <div class="div-input">
                     <label for="b_account_no" class="myLabel">Số tài khoản ngân hàng</label>
-                    <input type="tel" pattern="[0-9]{14}" name="b_account_no" 
+                    <input type="tel" pattern="[0-9]{14}" name="b_account_no" value="{{ old('b_account_no') }}"
                      id="b_account_no" class="input" maxlength="14">
                     <p id="invalid-bank" class="error">ok</p>
                 </div>

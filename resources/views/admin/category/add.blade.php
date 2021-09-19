@@ -35,12 +35,14 @@
                 {{ csrf_field() }}
                 <div class="div-input">
                     <label for="category_name" class="myLabel">Tên thể loại</label>
-                    <input type="text" name="category_name" id="category_name" class="input" maxlength="50">
+                    <input type="text" name="category_name" id="category_name" class="input" 
+                           value="{{ old('category_name') }}" maxlength="50">
                     <p id="invalid-name" class="error">ok</p>
                 </div>
                 <div class="div-input">
                     <label for="category_fullname" class="myLabel">Tên đầy đủ của thể loại</label>
-                    <input type="text" name="category_fullname" id="category_fullname" class="input" maxlength="100">
+                    <input type="text" name="category_fullname" id="category_fullname" class="input"
+                           value="{{ old('category_fullname') }}" maxlength="100">
                     <p id="invalid-fullname" class="error">ok</p>
                 </div>
                 <div class="div-input">
