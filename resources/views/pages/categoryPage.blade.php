@@ -60,7 +60,7 @@
                 document.getElementById('lol').className = 'list active';
                 // alert("1");
                 break;
-            case "13":
+            case "8":
                 document.getElementById('tft').className = 'list active';
                 break;
             case "2":
