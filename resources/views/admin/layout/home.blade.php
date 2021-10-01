@@ -1,7 +1,7 @@
 @extends('admin.layout.adminMaster')
 
 @section('title')
-    <title>Trang Chủ</title>
+    <title>Admin's Home</title>
 @endsection
 
 @section('content')

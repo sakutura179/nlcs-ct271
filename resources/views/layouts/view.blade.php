@@ -42,8 +42,9 @@
             <div class="comments">
                 <h2>Bình luận</h2>
                 @if (isset($viewer_login))
-                    <p>{{ $viewer_login->fullname }}</p>
+                    
                     <div class="write-comment-container">
+                        <p>Xin chào <b>{{ $viewer_login->fullname }}</b></p>
                         <p>Viết bình luận ... <i class="fa fa-pencil" aria-hidden="true"></i></p>
                         <form action="{{ route('viewer-comment') }}" method="POST" id="comment-form">
                             {{ csrf_field() }}
@@ -91,6 +92,11 @@
                                             style="color: blue; cursor: pointer;"> 
                                             Xóa bình luận <i class="fa fa-trash" aria-hidden="true"></i> </a></p>
                                 @endif
+                            @endif
+                            @if (isset($admin_login))
+                                <p><a onclick="deleteComment({{ $comment->comment_id }})"  
+                                        style="color: blue; cursor: pointer;"> 
+                                        Xóa bình luận <i class="fa fa-trash" aria-hidden="true"></i> </a></p>
                             @endif
                         </div>
                     @endforeach

@@ -1,7 +1,7 @@
 @extends('author.layout.authorMaster')
 
 @section('title')
-    <title>Trang Chủ</title>
+    <title>Author's Home</title>
 @endsection
 
 @section('content')
