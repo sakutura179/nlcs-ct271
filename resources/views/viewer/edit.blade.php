@@ -15,6 +15,8 @@
         }
     </style>
     <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+    {{-- dark mode --}}
+    <link rel="stylesheet" href="{{ asset('css/front/mainPage.css') }}">
 @endsection
 
 @section('title')

@@ -2,6 +2,7 @@
 @extends('layouts.index')
 
 @section('css')
+    {{-- dark mode --}}
     <link rel="stylesheet" href="{{ asset('css/front/mainPage.css') }}">
     <?php
         $bg = array('bg01.jpeg', 'bg02.jpg', 'bg03.jpg', 'bg04.jpg', 'bg05.jpg', 'bg06.jpg', 'bg07.jpg', 'bg08.jpg',

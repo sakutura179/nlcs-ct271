@@ -4,16 +4,19 @@
     <style>
         h1 {
             text-align: center;
+            color: var(--a);
         }
 
         .content {
             padding: .5em 2em;
         }
 
-        a {
-            color: blue;
+        a.edit {
+            color: var(--cate);
         }
     </style>
+    {{-- dark mode --}}
+    <link rel="stylesheet" href="{{ asset('css/front/mainPage.css') }}">
 @endsection
 
 @section('title')
@@ -29,8 +32,8 @@
                    Tên người dùng: {{$viewer_login->fullname}}</br>
                    Email: {{$viewer_login->email}}</br>
                    Ngày sinh: {{$viewer_login->birth_day}}</br> 
-                <a href="{{ route('edit-viewer', ['id' => $viewer_login->username]) }}">
-                    Chỉnh sửa thông tin cá nhân <i class="fas fa-user-cog    "></i></a></p>
+                <a href="{{ route('edit-viewer', ['id' => $viewer_login->username]) }}" class="edit">
+                    Chỉnh sửa thông tin cá nhân <i class="fas fa-user-cog"></i></a></p>
             @endif
         @else
         {!!"<h1>Bạn chưa đăng nhập</h1>"!!}
