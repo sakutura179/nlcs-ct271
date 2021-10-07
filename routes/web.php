@@ -121,6 +121,7 @@ Route::prefix('admin')->middleware('AdminAuth')->group(function () {
         Route::get('delete/{idc}/{id}', 'CommentController@destroy')->name('delete-comment');
     });
     
+    Route::get('delete-comment/{id}', 'CommentController@adminDelete')->name('admin-delete-comment');
 });
 
 

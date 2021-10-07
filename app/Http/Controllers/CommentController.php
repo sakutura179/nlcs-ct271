@@ -125,8 +125,26 @@ class CommentController extends Controller
                 }
             echo "</div>";
         }
+    }
 
-        
+    public function adminDelete($id)
+    {
+        $data = Comment::find($id);
+        $news_id = $data->news_id; // Gan truoc de sau khi xoa con su dung duoc nua
+
+        $data->delete();
+
+        $comments = Comment::where(['news_id' => $news_id])->orderBy('comment_id', 'desc')->get();
+        foreach ($comments as $value) { // Tai lai danh sach comment bang AJAX sau khi xoa
+            echo "
+            <div class='comment' id='".$value->comment_id."'>
+                <p class='comment-header'>". $value->commentBelongsToViewer->fullname ."
+                    <small> ". $value->created_at ."</small></p>
+                <p class='comment-content'>". $value->content ."</p>
+                <p><a onclick='adminDeleteComment(".$value->comment_id.")' style='color: blue; cursor: pointer;'> 
+                        Xóa bình luận <i class='fa fa-trash' aria-hidden='true'></i> </a></p>
+            </div>";
+        }
     }
 
     public function destroy($idc, $id)

@@ -94,7 +94,7 @@
                                 @endif
                             @endif
                             @if (isset($admin_login))
-                                <p><a onclick="deleteComment({{ $comment->comment_id }})"  
+                                <p><a onclick="adminDeleteComment({{ $comment->comment_id }})"  
                                         style="color: blue; cursor: pointer;"> 
                                         Xóa bình luận <i class="fa fa-trash" aria-hidden="true"></i> </a></p>
                             @endif
@@ -145,6 +145,15 @@
                     $('#'+id).html(data);
                 }
             );
+        }
+
+        function adminDeleteComment(id) { // Ham AJAX de xu ly xoa comment cua admin
+            if (confirm('Bạn có muốn xóa?')) {
+                $.get("/admin/delete-comment/" + id, function (data) {
+                        $('#comments-container').html(data);
+                    }
+                );
+            }
         }
 
         function deleteComment(id) { // Ham AJAX de xu ly xoa comment
