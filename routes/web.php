@@ -21,9 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('/')->middleware('PageAuth')->group(function () {
     Route::get('', 'PageController@mainPage')->name('mainPage');
 
-    Route::get('search/{val}', 'PageController@search');
+    Route::post('search/{val}', 'PageController@search');
     
-    Route::get('more/{val}', 'PageController@more');
+    Route::post('more/{val}', 'PageController@more');
     
     Route::get('category/{slug}', 'PageController@category')->name('category');
     

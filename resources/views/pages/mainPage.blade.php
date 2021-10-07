@@ -99,16 +99,21 @@
 @section('lowerScript')
     <script src="{{ asset('js/slide.js') }}"></script>
     <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         $(document).ready(function () {
             $('input[type=text][name=search]').change(function () {
                 var val = this.value;
                 if (val === null || val === '') {
-                    $.get("search/null", function (data) {
+                    $.post("search/null", function (data) {
                         $('.posts').html(data);
                     },
                 );
                 } else {
-                    $.get("search/" + val, function (data) {
+                    $.post("search/" + val, function (data) {
                         $('.posts').html(data);
                     },
                 );   
@@ -120,7 +125,7 @@
         function more() {
             $(document).ready(function () {
                 var val = ++i;
-                $.get("more/" + val, function (data) {
+                $.post("more/" + val, function (data) {
                         $('.posts').html(data);
                     },
                 );

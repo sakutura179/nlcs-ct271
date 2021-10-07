@@ -8,7 +8,7 @@
 @endsection
 
 @section('title')
-    <title><?php echo $data->header; ?></title>
+    <title>{{ $data->header }}</title>
 @endsection
 
 @section('content')
