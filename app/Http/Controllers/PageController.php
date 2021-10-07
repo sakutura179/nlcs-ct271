@@ -21,17 +21,16 @@ class PageController extends Controller
 
     public function search($val)
     {
-        $link = "http://localhost/";
         if ($val == "null") {
             $news = News::orderBy('news_id', 'desc')->take(10)->get();
             foreach ($news as $item) {
                 echo "
                 <div class='post'>
-                    <a href='".$link."post/".$item->slug."' target='_blank'>
-                        <img src='".$link.$item->pic."' alt='$item->header'></a>
+                    <a href='post/".$item->slug."' target='_blank'>
+                        <img src='".$item->pic."' alt='$item->header'></a>
                     <div class='news-frame'></div>
-                    <p><a href='".$link."category/".$item->newsBelongsToCategory->slug."' id='category'>".$item->newsBelongsToCategory->category_name."</a>
-                    <a href='".$link."post/".$item->slug."' target='_blank'>".$item->header."
+                    <p><a href='category/".$item->newsBelongsToCategory->slug."' id='category'>".$item->newsBelongsToCategory->category_name."</a>
+                    <a href='post/".$item->slug."' target='_blank'>".$item->header."
                     <br><i>Lượt xem: ". $item->view ."<br>".$item->created_at."</i></a>
                     </p>
                 </div>";
@@ -45,11 +44,11 @@ class PageController extends Controller
                 foreach ($posts as $item) {
                     echo "
                     <div class='post'>
-                        <a href='".$link."post/".$item->slug."' target='_blank'>
-                            <img src='".$link.$item->pic."' alt='$item->header'></a>
+                        <a href='post/".$item->slug."' target='_blank'>
+                            <img src='".$item->pic."' alt='$item->header'></a>
                         <div class='news-frame'></div>
-                        <p><a href='".$link."category/".$item->newsBelongsToCategory->slug."' id='category'>".$item->newsBelongsToCategory->category_name."</a>
-                        <a href='".$link."post/".$item->slug."' target='_blank'>".$item->header."
+                        <p><a href='category/".$item->newsBelongsToCategory->slug."' id='category'>".$item->newsBelongsToCategory->category_name."</a>
+                        <a href='post/".$item->slug."' target='_blank'>".$item->header."
                         <br><i>Lượt xem: ". $item->view ."<br>".$item->created_at."</i></a>
                         </p>
                     </div>";
@@ -63,16 +62,15 @@ class PageController extends Controller
     public function more($val)
     {
         $num = 10*$val;
-        $link = "http://localhost/";
         $news = News::orderBy('news_id', 'desc')->take($num)->get();
         foreach ($news as $item) {
             echo "
             <div class='post'>
-                <a href='".$link."post/".$item->slug."' target='_blank'>
-                    <img src='".$link.$item->pic."' alt='$item->header'></a>
+                <a href='post/".$item->slug."' target='_blank'>
+                    <img src='".$item->pic."' alt='$item->header'></a>
                 <div class='news-frame'></div>
-                <p><a href='".$link."category/".$item->newsBelongsToCategory->slug."' id='category'>".$item->newsBelongsToCategory->category_name."</a>
-                <a href='".$link."post/".$item->slug."' target='_blank'>".$item->header."
+                <p><a href='category/".$item->newsBelongsToCategory->slug."' id='category'>".$item->newsBelongsToCategory->category_name."</a>
+                <a href='post/".$item->slug."' target='_blank'>".$item->header."
                 <br><i>Lượt xem: ". $item->view ."<br>".$item->created_at."</i></a>
                 </p>
             </div>";
