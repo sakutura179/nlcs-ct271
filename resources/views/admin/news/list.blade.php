@@ -57,7 +57,7 @@
                                     {{ "Có" }}
                                 @endif
                             </p>
-                            <input type="checkbox" name="trending" id="treding" value="{{ $item->news_id }}" 
+                            <input type="checkbox" name="trending" value="{{ $item->news_id }}" 
                                 onchange="ajax({{ $item->news_id }})"
                                 @if ($item->trending == 1)
                                     {{ "checked='checked'" }}
@@ -91,8 +91,9 @@
         //Ham AJAX thay doi trang thai trending cua bai viet
         function ajax(id) {
             $(document).ready(function () {
-            // $('input[type=checkbox][name=trending]').change(function () { // Bỏ do sử dụng datatable thì khi lấy, 
-                // var id = this.value;                                      // jQuery chỉ lấy được 10 row đầu
+            // Bỏ do sử dụng datatable thì khi lấy, jQuery chỉ lấy được 10 row đầu
+            // $('input[type=checkbox][name=trending]').change(function () { 
+                // var id = this.value;
                 // alert(id);
                 $.get("edit/" + id, function (data) {
                     $("#" + id).html(data);
