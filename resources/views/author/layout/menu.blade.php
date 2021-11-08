@@ -20,7 +20,7 @@
                 <span class="title">Bài Viết</span>
             </a>
         </li>
-        <li class="logout" style="bottom: -400px">
+        <li class="logout">
             <a href="{{ route('logout') }}">
                 <span class="icon">
                     <ion-icon name="log-out-outline"></ion-icon>

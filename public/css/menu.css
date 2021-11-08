@@ -23,6 +23,7 @@
     width: 100%;
     padding-left: 5px;
     padding-top: 40px;
+    height: 90%;
 }
 
 .navigation ul li {
@@ -86,7 +87,7 @@
 
 .navigation ul li.logout {
     position: absolute;
-    bottom: -160px;
+    bottom: 0;
     cursor: pointer;
 }
 
