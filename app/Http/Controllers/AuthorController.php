@@ -39,7 +39,7 @@ class AuthorController extends Controller
     {
         $this->validate($request, 
             [
-                'username' => 'unique:authors,username',
+                'username' => 'unique:authors,username|unique:viewers,username|unique:admins,username',
                 'email' => 'unique:authors,email',
             ],
             [

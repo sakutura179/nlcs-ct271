@@ -129,6 +129,7 @@ class CommentController extends Controller
 
     public function adminDelete($id)
     {
+        // Xoa truc tiep tu trang bai viet
         $data = Comment::find($id);
         $news_id = $data->news_id; // Gan truoc de sau khi xoa con su dung duoc nua
 
@@ -149,6 +150,7 @@ class CommentController extends Controller
 
     public function destroy($idc, $id)
     {
+        // Xoa tu bang comment cua giao dien admin
         $data = Comment::find($idc);
         $data->delete();
 
@@ -157,6 +159,7 @@ class CommentController extends Controller
 
     public function authorDestroy($idc, $id)
     {
+        // Xoa tu bang comment cua giao dien author
         $data = Comment::find($idc);
         $data->delete();
 

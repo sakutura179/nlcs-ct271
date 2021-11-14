@@ -34,7 +34,7 @@ class ViewerController extends Controller
     {
        $this->validate($request, 
             [
-                'username' => 'unique:viewers,username',
+                'username' => 'unique:viewers,username|unique:admins,username|unique:authors,username',
                 'email' => 'unique:viewers,email',
             ],
             [
